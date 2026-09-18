@@ -1,6 +1,6 @@
 
 
-const TechList = () => {
+const TechList = ({technologies}) => {
   return (
     <div>
       
