@@ -10,7 +10,7 @@ const Hero = () => {
                             Development Stack
                         </span>
                     </h2>
-                    <p className='text-[#475569] font-normal text-[18px]'>Explore frontend, backend, database, and tooling options,
+                    <p className='text-[16px] text-[#64748B] font-normal'>Explore frontend, backend, database, and tooling options,
                         compare them side by side, and put together the stack that fits your
                         next project.
                     </p>
