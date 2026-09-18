@@ -2,7 +2,7 @@ import HeroI from '../assets/banner-stack.png'
 const Hero = () => {
     return (
         <div>
-            <div className='container mx-auto pt-30 flex gap-10 pl-4 pr-4 pb-4 items-center justify-between'>
+            <div className='container mx-auto pt-10 flex gap-10 pl-4 pr-4 pb-4 items-center justify-between'>
                 {/* for left side div */}
                 <div className='flex flex-col flex-1/2 gap-6'>
                     <h2 className='text-5xl font-bold text-black'>Build Your Ideal <br></br>
