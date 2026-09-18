@@ -1,78 +1,37 @@
-# React + TypeScript + Vite
+Name of your project : DevStack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+About project: This is a learing purpese web application. This project learing how to call promis, props, conditional reandaring, use tallwincss for designing and most part of this project react tost used. 
 
-Currently, two official plugins are available:
+Use technologi: 
+ -> React (tsx)
+ -> Tallwincss
+ -> React icon
+ -> React toestify
+ -> Daisyui
+ -> Vite 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+3 features about my project
+  -> Save Stack For LocalStorage
+  -> Search + Category Filter
+  -> Stack Export/Share
 
-## React Compiler
+-------------------------------------Answer to the simple qustions-----------------------------------------
+(1.) JSX is a way of write html code inside js. Truely is a not for html this code convart React.createElement()
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+(2.) Props:                                                 State:
+      *Inside Prent component                                 *Inside component (self)
+      *read-only, immutable                                   *Change using useState--> setter method
+      *Props came from Mainlayout                             *Cerate inside components (self)
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+(3.) UseState remain component value and don't remove re-rendering. UseState return a array [value, setValue]. I was used UseEffect App.tsx file for data rendering.
 
-## Expanding the ESLint configuration
+(4.) UseEffect is a react hook.The main work outsid the component and data rendering. Main work data fetch, DOM manupulet, timer. And UseEffect need to load the JSON data because stop infinity loop, right data fetching.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+(5.) React DOM uses keys to track which item is which. Missing key or id then any items are add or remove then react re-use or re-render Wrong data.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+(6.) Show differint JSX base on condition this call conditional rendering. Kind of if/tarnari but write in JSX.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+(7.) Child -> Parent: Direct communication isn't possible (data flow is unidirectional, from top to bottom), so the parent passes a function as a prop, and the child calls it. This is known as the "lifting state up" pattern.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The handleAdd function is created in MainLayout and passed down via props to TechCard. When the user clicks the button
 
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
